@@ -1,6 +1,6 @@
 # Plot.ly-Challenge
 The Plot.ly-Challenge project is to plot bellybutton data using Javascript and Plot.ly to a static webpage. The graphs generated:
-* Bar char 
+* Bar chart 
 * Bubble chart
 ## Bellybutton Diversity Webpage
 The Bellybutton Diversity Webpage can be found at this link: *https://stevenhiek.github.io/Plot.ly-Challenge/*
