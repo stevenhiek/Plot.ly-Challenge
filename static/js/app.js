@@ -18,11 +18,8 @@ function init() {
 function create_charts(sample) {
   d3.json(path).then(function(data) {
       var samples = data.samples;
-      var samples_filtered = samples.filter(function(object){
-          return(object.id == sample)
-      });
-      
-      var array = samples_filtered[0]
+      var array = samples.filter(function(object){
+        return(object.id == sample)})[0];
       var otu_ids = array.otu_ids;
       var sample_values = array.sample_values;
       var otu_labels = array.otu_labels;
@@ -72,13 +69,12 @@ function create_charts(sample) {
 function create_metadata(sample) {
   d3.json(path).then(function(data) {
     var metadata= data.metadata;
-    var samples_array = metadata.filter(function(object){
-      return(object.id == sample)});
-      var array= samples_array[0];
-      var metadata_panel = d3.select("#sample-metadata");
-      metadata_panel.html("");
-      Object.entries(array).forEach(function([key, value]) {
-        metadata_panel.append("p").text(`${key}: ${value}`);
+    var array= metadata.filter(function(object){
+      return(object.id == sample)})[0];
+    var metadata_panel = d3.select("#sample-metadata");
+    metadata_panel.html("");
+    Object.entries(array).forEach(function([key, value]) {
+      metadata_panel.append("p").text(`${key}: ${value}`);
       });
     });
   }
